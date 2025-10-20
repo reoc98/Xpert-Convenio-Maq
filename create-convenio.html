@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo convenio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/create.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">QC</div>
+        <span>Quuo</span>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="index.html" class="sidebar__link">
+          <span class="icon">📄</span>
+          <span>Convenios</span>
+        </a>
+        <a href="#" class="sidebar__link is-active">
+          <span class="icon">📝</span>
+          <span>Crear convenio</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main__header main__header--spread">
+        <div class="header__title">
+          <a href="index.html" class="btn-icon" aria-label="Volver">
+            <span>&larr;</span>
+          </a>
+          <div>
+            <span class="badge">Convenio</span>
+            <h1>Crear nuevo convenio</h1>
+            <p>Completa los datos para registrar el convenio con el aliado</p>
+          </div>
+        </div>
+        <div class="header__actions">
+          <button class="btn btn--ghost">Guardar borrador</button>
+          <button class="btn btn--primary">Avanzar</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">ℹ️</span>
+            Información del convenio
+          </h2>
+          <span class="section__step">Paso 1 de 3</span>
+        </header>
+        <div class="section__body">
+          <form class="form-grid" aria-label="Formulario para crear convenio">
+            <div class="form-field">
+              <label for="nombre-convenio">Nombre del convenio</label>
+              <input id="nombre-convenio" type="text" placeholder="Ej. Convenio Educativo 2024" />
+            </div>
+            <div class="form-field">
+              <label for="categoria">Tipo de producto</label>
+              <select id="categoria">
+                <option value="">Selecciona una categoría</option>
+                <option>Cupo activo</option>
+                <option>Libre inversión</option>
+                <option>Tarjeta crédito</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="fecha-inicio">Fecha de inicio</label>
+              <input id="fecha-inicio" type="date" />
+            </div>
+            <div class="form-field">
+              <label for="fecha-fin">Fecha de finalización</label>
+              <input id="fecha-fin" type="date" />
+            </div>
+            <div class="form-field">
+              <label for="monto-maximo">Monto máximo aprobado</label>
+              <div class="input-with-prefix">
+                <span class="prefix">$</span>
+                <input id="monto-maximo" type="number" placeholder="0.00" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="tasa">Tasa nominal anual</label>
+              <div class="input-with-suffix">
+                <input id="tasa" type="number" placeholder="0.00" />
+                <span class="suffix">%</span>
+              </div>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="descripcion">Descripción</label>
+              <textarea id="descripcion" rows="3" placeholder="Describe las condiciones del convenio"></textarea>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">👥</span>
+            Responsable del aliado
+          </h2>
+        </header>
+        <div class="section__body">
+          <form class="form-grid" aria-label="Información de contacto del aliado">
+            <div class="form-field">
+              <label for="contacto-nombre">Nombre y apellido</label>
+              <input id="contacto-nombre" type="text" placeholder="Laura Green" />
+            </div>
+            <div class="form-field">
+              <label for="contacto-id">Documento</label>
+              <input id="contacto-id" type="text" placeholder="CC 1.143.845.539" />
+            </div>
+            <div class="form-field">
+              <label for="contacto-email">Correo electrónico</label>
+              <input id="contacto-email" type="email" placeholder="nombre@empresa.com" />
+            </div>
+            <div class="form-field">
+              <label for="contacto-telefono">Teléfono de contacto</label>
+              <input id="contacto-telefono" type="tel" placeholder="(+57) 300 000 0000" />
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">📄</span>
+            Documentos requeridos
+          </h2>
+          <button class="btn-chip" type="button">+ Añadir documento</button>
+        </header>
+        <div class="section__body">
+          <div class="document-list">
+            <article class="document-card">
+              <div>
+                <h3>Hoja de términos</h3>
+                <p>Documento firmado por el aliado con condiciones y vigencia.</p>
+              </div>
+              <button class="btn-link" type="button">Subir archivo</button>
+            </article>
+            <article class="document-card">
+              <div>
+                <h3>Certificación bancaria</h3>
+                <p>Cuenta autorizada para desembolsos.</p>
+              </div>
+              <button class="btn-link" type="button">Subir archivo</button>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
