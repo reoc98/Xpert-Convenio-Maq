@@ -39,66 +39,81 @@
             <span>&larr;</span>
           </button>
           <div>
-            <h1>Selecciona un producto</h1>
-            <p>Gestiona los convenios disponibles y crea nuevos acuerdos</p>
+            <h1>Gestiona tus convenios aliados</h1>
+            <p>Centraliza el seguimiento y crea nuevas alianzas estratégicas</p>
+            <div class="header__summary">
+              <span class="summary-chip">
+                <span class="summary-chip__label">Activos</span>
+                <strong>4 convenios</strong>
+              </span>
+            </div>
           </div>
         </div>
-        <a class="btn btn--primary" href="create-convenio.html">Crear nuevo convenio</a>
+        <a class="btn btn--primary" href="create-convenio.html">
+          <span>+ Nuevo convenio</span>
+        </a>
       </header>
 
       <section class="search">
-        <label class="search__label" for="search-products">Buscar producto</label>
+        <label class="search__label" for="search-convenios">Buscar convenio</label>
         <div class="search__input">
           <span class="icon">🔍</span>
-          <input id="search-products" type="text" placeholder="Buscar producto" />
+          <input id="search-convenios" type="text" placeholder="Busca por aliado o categoría" />
         </div>
       </section>
 
-      <section class="product-list">
+      <section class="convenio-list">
         <h2 class="section-title">
-          <span class="icon">📦</span>
-          Producto
+          <span class="icon">🤝</span>
+          Convenios aliados
         </h2>
-        <div class="product-grid">
-          <article class="product-card">
-            <span class="product-card__icon">💼</span>
-            <h3>Compra de cartera</h3>
-            <p class="product-card__meta">8 convenios activos</p>
+        <div class="convenio-grid">
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--farmatodo">FA</span>
+                <h3>Farmatodo</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
           </article>
-          <article class="product-card">
-            <span class="product-card__icon">💳</span>
-            <h3>Cupo Activo</h3>
-            <p class="product-card__meta">5 convenios activos</p>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--jamar">JA</span>
+                <h3>Jamar</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
           </article>
-          <article class="product-card">
-            <span class="product-card__icon">🏦</span>
-            <h3>Libre inversión</h3>
-            <p class="product-card__meta">12 convenios activos</p>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--uninorte">UN</span>
+                <h3>Universidad del Norte</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
           </article>
-          <article class="product-card">
-            <span class="product-card__icon">🎓</span>
-            <h3>Libre inversión Educar</h3>
-            <p class="product-card__meta">4 convenios activos</p>
-          </article>
-          <article class="product-card">
-            <span class="product-card__icon">🧾</span>
-            <h3>Sobrecrédito</h3>
-            <p class="product-card__meta">6 convenios activos</p>
-          </article>
-          <article class="product-card">
-            <span class="product-card__icon">💠</span>
-            <h3>Tarjeta TAC</h3>
-            <p class="product-card__meta">3 convenios activos</p>
-          </article>
-          <article class="product-card">
-            <span class="product-card__icon">💳</span>
-            <h3>Tarjeta VISA</h3>
-            <p class="product-card__meta">2 convenios activos</p>
-          </article>
-          <article class="product-card product-card--ghost">
-            <span class="product-card__icon">➕</span>
-            <h3>Nuevo producto</h3>
-            <p class="product-card__meta">Próximamente</p>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--homecenter">HC</span>
+                <h3>Homecenter</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
           </article>
         </div>
       </section>
