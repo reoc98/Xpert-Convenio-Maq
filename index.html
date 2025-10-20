@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrador de Convenios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">QC</div>
+        <span>Quuo</span>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link is-active">
+          <span class="icon">📄</span>
+          <span>Convenios</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="icon">👥</span>
+          <span>Clientes</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="icon">⚙️</span>
+          <span>Configuración</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main__header">
+        <div class="header__title">
+          <button class="btn-icon" aria-label="Volver">
+            <span>&larr;</span>
+          </button>
+          <div>
+            <h1>Gestiona tus convenios aliados</h1>
+            <p>Centraliza el seguimiento y crea nuevas alianzas estratégicas</p>
+            <div class="header__summary">
+              <span class="summary-chip">
+                <span class="summary-chip__label">Activos</span>
+                <strong>4 convenios</strong>
+              </span>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn--primary" href="create-convenio.html">
+          <span>+ Nuevo convenio</span>
+        </a>
+      </header>
+
+      <section class="search">
+        <label class="search__label" for="search-convenios">Buscar convenio</label>
+        <div class="search__input">
+          <span class="icon">🔍</span>
+          <input id="search-convenios" type="text" placeholder="Busca por aliado o categoría" />
+        </div>
+      </section>
+
+      <section class="convenio-list">
+        <h2 class="section-title">
+          <span class="icon">🤝</span>
+          Convenios aliados
+        </h2>
+        <div class="convenio-grid">
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--farmatodo">FA</span>
+                <h3>Farmatodo</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
+          </article>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--jamar">JA</span>
+                <h3>Jamar</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
+          </article>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--uninorte">UN</span>
+                <h3>Universidad del Norte</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
+          </article>
+
+          <article class="convenio-card">
+            <div class="convenio-card__body">
+              <div class="convenio-card__identity">
+                <span class="convenio-card__logo logo--homecenter">HC</span>
+                <h3>Homecenter</h3>
+              </div>
+            </div>
+            <footer class="convenio-card__footer">
+              <button class="btn btn--outline" type="button">Ver convenio</button>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
