@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrador de Convenios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">QC</div>
+        <span>Quuo</span>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link is-active">
+          <span class="icon">📄</span>
+          <span>Convenios</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="icon">👥</span>
+          <span>Clientes</span>
+        </a>
+        <a href="#" class="sidebar__link">
+          <span class="icon">⚙️</span>
+          <span>Configuración</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="main__header">
+        <div class="header__title">
+          <button class="btn-icon" aria-label="Volver">
+            <span>&larr;</span>
+          </button>
+          <div>
+            <h1>Selecciona un producto</h1>
+            <p>Gestiona los convenios disponibles y crea nuevos acuerdos</p>
+          </div>
+        </div>
+        <a class="btn btn--primary" href="create-convenio.html">Crear nuevo convenio</a>
+      </header>
+
+      <section class="search">
+        <label class="search__label" for="search-products">Buscar producto</label>
+        <div class="search__input">
+          <span class="icon">🔍</span>
+          <input id="search-products" type="text" placeholder="Buscar producto" />
+        </div>
+      </section>
+
+      <section class="product-list">
+        <h2 class="section-title">
+          <span class="icon">📦</span>
+          Producto
+        </h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-card__icon">💼</span>
+            <h3>Compra de cartera</h3>
+            <p class="product-card__meta">8 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">💳</span>
+            <h3>Cupo Activo</h3>
+            <p class="product-card__meta">5 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">🏦</span>
+            <h3>Libre inversión</h3>
+            <p class="product-card__meta">12 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">🎓</span>
+            <h3>Libre inversión Educar</h3>
+            <p class="product-card__meta">4 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">🧾</span>
+            <h3>Sobrecrédito</h3>
+            <p class="product-card__meta">6 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">💠</span>
+            <h3>Tarjeta TAC</h3>
+            <p class="product-card__meta">3 convenios activos</p>
+          </article>
+          <article class="product-card">
+            <span class="product-card__icon">💳</span>
+            <h3>Tarjeta VISA</h3>
+            <p class="product-card__meta">2 convenios activos</p>
+          </article>
+          <article class="product-card product-card--ghost">
+            <span class="product-card__icon">➕</span>
+            <h3>Nuevo producto</h3>
+            <p class="product-card__meta">Próximamente</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
