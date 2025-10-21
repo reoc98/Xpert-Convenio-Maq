@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de convenio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/create.css" />
+  <link rel="stylesheet" href="styles/detail.css" />
+</head>
+<body>
+  <div class="app-container">
+    <main class="main">
+      <header class="main__header main__header--spread">
+        <div class="header__meta">
+          <div class="brand-card">
+            <span class="brand-card__logo">QC</span>
+            <div class="brand-card__info">
+              <span class="brand-card__title">Quuo</span>
+              <span class="brand-card__subtitle">Convenios</span>
+            </div>
+          </div>
+          <a class="btn-icon" aria-label="Volver" href="index.html">
+            <span>&larr;</span>
+          </a>
+        </div>
+        <div class="header__title">
+          <span class="badge">Convenio</span>
+          <h1 id="convenio-titulo">Convenio aliado</h1>
+          <p id="convenio-descripcion">Consulta la información registrada para este aliado</p>
+        </div>
+        <a class="btn btn--primary" href="create-convenio.html">Crear nuevo convenio</a>
+      </header>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">🗂️</span>
+            Datos obligatorios
+          </h2>
+          <span class="section__hint">Información cargada en la creación</span>
+        </header>
+        <div class="section__body">
+          <div class="form-grid">
+            <div class="form-field form-field--static form-field--full">
+              <span class="form-field__label">Nombre del convenio</span>
+              <span class="field-value" id="detalle-nombre">--</span>
+            </div>
+
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Logo del convenio</span>
+              <div class="logo-preview" id="detalle-logo">
+                <span class="logo-preview__badge">--</span>
+                <span class="logo-preview__name" id="detalle-logo-nombre">Convenio</span>
+              </div>
+            </div>
+
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Producto asociado</span>
+              <span class="field-value" id="detalle-producto">--</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">⚙️</span>
+            Parámetros opcionales
+          </h2>
+          <span class="section__hint">Campos configurables por aliado</span>
+        </header>
+        <div class="section__body">
+          <div class="form-grid">
+            <div class="form-field form-field--static">
+              <span class="form-field__label">NIT del aliado</span>
+              <span class="field-value" id="detalle-nit">--</span>
+            </div>
+
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Correo de contacto</span>
+              <span class="field-value" id="detalle-correo">--</span>
+            </div>
+
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Tipo de desembolso</span>
+              <span class="field-value" id="detalle-desembolso">--</span>
+            </div>
+          </div>
+
+          <div class="form-grid form-grid--nested hidden" id="detalle-cuenta">
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Tipo de cuenta</span>
+              <span class="field-value" id="detalle-tipo-cuenta">--</span>
+            </div>
+            <div class="form-field form-field--static">
+              <span class="form-field__label">Número de cuenta</span>
+              <span class="field-value" id="detalle-numero-cuenta">--</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const convenios = {
+      farmatodo: {
+        nombre: 'Farmatodo',
+        descripcion: 'Cobertura nacional en salud y bienestar para colaboradores Quuo.',
+        logo: { initials: 'FA', className: 'logo--farmatodo' },
+        producto: 'Libranza bienestar',
+        nit: '900.567.890-1',
+        correo: 'alianzas@farmatodo.com.co',
+        desembolso: {
+          tipo: 'Cuenta convenio',
+          tipoCuenta: 'Cuenta corriente',
+          numeroCuenta: '02134567890'
+        }
+      },
+      jamar: {
+        nombre: 'Jamar',
+        descripcion: 'Planes de financiación y diseño interior para colaboradores aliados.',
+        logo: { initials: 'JA', className: 'logo--jamar' },
+        producto: 'Crédito para remodelación',
+        nit: '890.345.222-5',
+        correo: 'corporativo@jamar.com',
+        desembolso: {
+          tipo: 'Cuenta convenio',
+          tipoCuenta: 'Cuenta de ahorros',
+          numeroCuenta: '45879632145'
+        }
+      },
+      'universidad-del-norte': {
+        nombre: 'Universidad del Norte',
+        descripcion: 'Educación continua y posgrados con tarifas preferenciales.',
+        logo: { initials: 'UN', className: 'logo--uninorte' },
+        producto: 'Crédito educativo',
+        nit: '890.201.213-9',
+        correo: 'alianzas@uninorte.edu.co',
+        desembolso: {
+          tipo: 'Cuenta cliente'
+        }
+      },
+      homecenter: {
+        nombre: 'Homecenter',
+        descripcion: 'Materiales y remodelación con alianzas a nivel nacional.',
+        logo: { initials: 'HC', className: 'logo--homecenter' },
+        producto: 'Crédito para mejoras del hogar',
+        nit: '860.402.887-6',
+        correo: 'alianzas@homecenter.com.co',
+        desembolso: {
+          tipo: 'Cuenta convenio',
+          tipoCuenta: 'Cuenta corriente',
+          numeroCuenta: '98765432100'
+        }
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const convenioId = params.get('id') || 'farmatodo';
+    const convenio = convenios[convenioId];
+
+    if (!convenio) {
+      window.location.href = 'index.html';
+    }
+
+    const setText = (id, value) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      element.textContent = value || 'No registrado';
+    };
+
+    setText('convenio-titulo', convenio?.nombre);
+    setText('convenio-descripcion', convenio?.descripcion);
+    setText('detalle-nombre', convenio?.nombre);
+    setText('detalle-producto', convenio?.producto);
+    setText('detalle-nit', convenio?.nit);
+    setText('detalle-correo', convenio?.correo);
+
+    const desembolso = convenio?.desembolso;
+    const tipoDesembolso = desembolso?.tipo || 'No registrado';
+    setText('detalle-desembolso', tipoDesembolso);
+
+    const logoBadge = document.querySelector('#detalle-logo .logo-preview__badge');
+    const logoName = document.getElementById('detalle-logo-nombre');
+    if (logoBadge && convenio?.logo) {
+      logoBadge.textContent = convenio.logo.initials;
+      logoBadge.className = `logo-preview__badge ${convenio.logo.className}`;
+    }
+    if (logoName) {
+      logoName.textContent = convenio?.nombre || 'Convenio';
+    }
+
+    const detalleCuenta = document.getElementById('detalle-cuenta');
+    if (desembolso && desembolso.tipo === 'Cuenta convenio') {
+      detalleCuenta.classList.remove('hidden');
+      setText('detalle-tipo-cuenta', desembolso.tipoCuenta);
+      setText('detalle-numero-cuenta', desembolso.numeroCuenta);
+    } else {
+      detalleCuenta.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Administrador de Convenios - Maquetación estática
 
-Este proyecto contiene las vistas estáticas del administrador de convenios solicitadas: una página principal con la lista de convenios aliados y una pantalla para la creación de nuevos convenios. No hay integración con APIs ni lógica dinámica; todo el contenido es puramente HTML y CSS.
+Este proyecto contiene las vistas estáticas del administrador de convenios solicitadas: una página principal con la lista de convenios aliados, una pantalla para consultar el detalle de cada alianza (reutilizando el mismo diseño del formulario con datos precargados) y una pantalla para la creación de nuevos convenios. No hay integración con APIs ni lógica dinámica; todo el contenido es puramente HTML, CSS y un poco de JavaScript para cargar la información del aliado seleccionado.
 
 ## Requisitos previos
 
@@ -24,7 +24,7 @@ Existen dos formas sencillas de visualizar la maqueta:
 
 1. Navega hasta la carpeta del proyecto.
 2. Abre `index.html` haciendo doble clic o arrastrándolo a la ventana del navegador.
-3. Desde la página principal podrás navegar a `create-convenio.html` mediante el botón **"+ Nuevo convenio"**.
+3. Desde la página principal podrás navegar a `convenio.html` (detalle del aliado) con el botón **"Ver convenio"** de cada tarjeta, o a `create-convenio.html` mediante el botón **"+ Nuevo convenio"**.
 
 > Nota: Al abrir los archivos directamente, algunos navegadores podrían bloquear fuentes externas por políticas de seguridad. Si notas diferencias en la tipografía, utiliza la opción 2.
 
@@ -61,9 +61,11 @@ El comando mostrará la URL local (usualmente `http://localhost:3000`). Ingresa 
 ```
 Xpert-Convenio-Maq/
 ├── index.html              # Landing de administrador de convenios
+├── convenio.html           # Ficha detallada para cada aliado con los campos del formulario en modo lectura
 ├── create-convenio.html    # Formulario para crear un convenio
 ├── styles/
-│   ├── main.css            # Estilos de la página principal
+│   ├── main.css            # Estilos base y componentes comunes
+│   ├── detail.css          # Estilos específicos de la ficha de convenio
 │   └── create.css          # Estilos del formulario de convenios
 └── README.md               # Este archivo con las instrucciones
 ```

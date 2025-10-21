@@ -11,42 +11,28 @@
 </head>
 <body>
   <div class="app-container">
-    <aside class="sidebar">
-      <div class="sidebar__brand">
-        <div class="sidebar__logo">QC</div>
-        <span>Quuo</span>
-      </div>
-      <nav class="sidebar__nav">
-        <a href="#" class="sidebar__link is-active">
-          <span class="icon">📄</span>
-          <span>Convenios</span>
-        </a>
-        <a href="#" class="sidebar__link">
-          <span class="icon">👥</span>
-          <span>Clientes</span>
-        </a>
-        <a href="#" class="sidebar__link">
-          <span class="icon">⚙️</span>
-          <span>Configuración</span>
-        </a>
-      </nav>
-    </aside>
-
     <main class="main">
       <header class="main__header">
-        <div class="header__title">
+        <div class="header__meta">
+          <div class="brand-card">
+            <span class="brand-card__logo">QC</span>
+            <div class="brand-card__info">
+              <span class="brand-card__title">Quuo</span>
+              <span class="brand-card__subtitle">Administrador de convenios</span>
+            </div>
+          </div>
           <button class="btn-icon" aria-label="Volver">
             <span>&larr;</span>
           </button>
-          <div>
-            <h1>Gestiona tus convenios aliados</h1>
-            <p>Centraliza el seguimiento y crea nuevas alianzas estratégicas</p>
-            <div class="header__summary">
-              <span class="summary-chip">
-                <span class="summary-chip__label">Activos</span>
-                <strong>4 convenios</strong>
-              </span>
-            </div>
+        </div>
+        <div class="header__title">
+          <h1>Gestiona tus convenios aliados</h1>
+          <p>Centraliza el seguimiento y crea nuevas alianzas estratégicas</p>
+          <div class="header__summary">
+            <span class="summary-chip">
+              <span class="summary-chip__label">Activos</span>
+              <strong>4 convenios</strong>
+            </span>
           </div>
         </div>
         <a class="btn btn--primary" href="create-convenio.html">
@@ -76,7 +62,7 @@
               </div>
             </div>
             <footer class="convenio-card__footer">
-              <button class="btn btn--outline" type="button">Ver convenio</button>
+              <a class="btn btn--outline" href="convenio.html?id=farmatodo">Ver convenio</a>
             </footer>
           </article>
 
@@ -88,7 +74,7 @@
               </div>
             </div>
             <footer class="convenio-card__footer">
-              <button class="btn btn--outline" type="button">Ver convenio</button>
+              <a class="btn btn--outline" href="convenio.html?id=jamar">Ver convenio</a>
             </footer>
           </article>
 
@@ -100,7 +86,7 @@
               </div>
             </div>
             <footer class="convenio-card__footer">
-              <button class="btn btn--outline" type="button">Ver convenio</button>
+              <a class="btn btn--outline" href="convenio.html?id=universidad-del-norte">Ver convenio</a>
             </footer>
           </article>
 
@@ -112,7 +98,7 @@
               </div>
             </div>
             <footer class="convenio-card__footer">
-              <button class="btn btn--outline" type="button">Ver convenio</button>
+              <a class="btn btn--outline" href="convenio.html?id=homecenter">Ver convenio</a>
             </footer>
           </article>
         </div>
