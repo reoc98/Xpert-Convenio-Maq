@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevo convenio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/create.css" />
+</head>
+<body>
+  <div class="app-container">
+    <main class="main">
+      <header class="main__header main__header--spread">
+        <div class="header__meta">
+          <div class="brand-card">
+            <span class="brand-card__logo">QC</span>
+            <div class="brand-card__info">
+              <span class="brand-card__title">Quuo</span>
+              <span class="brand-card__subtitle">Convenios</span>
+            </div>
+          </div>
+          <a href="index.html" class="btn-icon" aria-label="Volver">
+            <span>&larr;</span>
+          </a>
+        </div>
+        <div class="header__title">
+          <span class="badge">Convenio</span>
+          <h1>Crear nuevo convenio</h1>
+          <p>Completa los datos esenciales para registrar un nuevo aliado</p>
+        </div>
+        <div class="header__actions">
+          <button class="btn btn--ghost" type="button">Guardar borrador</button>
+          <button class="btn btn--primary" type="button">Crear convenio</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">🗂️</span>
+            Datos obligatorios
+          </h2>
+          <span class="section__hint">Estos campos son requeridos</span>
+        </header>
+        <div class="section__body">
+          <form class="form-grid" aria-label="Datos obligatorios del convenio">
+            <div class="form-field form-field--full">
+              <label for="nombre-convenio">Nombre del convenio</label>
+              <input id="nombre-convenio" type="text" placeholder="Ej. Convenio Farmatodo 2024" required />
+            </div>
+
+            <div class="form-field">
+              <label for="logo-convenio">Logo del convenio</label>
+              <label for="logo-convenio" class="file-upload" tabindex="0">
+                <span class="file-upload__icon">🖼️</span>
+                <div class="file-upload__info">
+                  <strong>Selecciona el logo</strong>
+                  <span>Formatos PNG o JPG (máx. 2 MB)</span>
+                </div>
+              </label>
+              <input id="logo-convenio" type="file" accept="image/*" />
+              <span class="file-upload__filename" id="logo-convenio-filename">Ningún archivo seleccionado</span>
+            </div>
+
+            <div class="form-field">
+              <label for="producto-convenio">Producto asociado</label>
+              <select id="producto-convenio" required>
+                <option value="">Selecciona un producto</option>
+                <option>Crédito de libre inversión</option>
+                <option>Libranza nómina</option>
+                <option>Crédito educativo</option>
+                <option>Tarjeta de crédito empresarial</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section__header">
+          <h2>
+            <span class="icon">⚙️</span>
+            Parámetros opcionales
+          </h2>
+          <span class="section__hint">Configura información parametrizable</span>
+        </header>
+        <div class="section__body">
+          <form class="form-grid" aria-label="Datos opcionales del convenio">
+            <div class="form-field">
+              <label for="nit-convenio">NIT del aliado</label>
+              <input id="nit-convenio" type="text" placeholder="900.000.000-0" />
+            </div>
+
+            <div class="form-field">
+              <label for="correo-convenio">Correo de contacto</label>
+              <input id="correo-convenio" type="email" placeholder="contacto@aliado.com" />
+            </div>
+
+            <div class="form-field">
+              <label for="tipo-desembolso">Tipo de desembolso</label>
+              <select id="tipo-desembolso">
+                <option value="">Selecciona una opción</option>
+                <option value="cliente">Cuenta cliente</option>
+                <option value="convenio">Cuenta convenio</option>
+              </select>
+            </div>
+
+            <div class="form-grid form-grid--nested hidden" id="datos-cuenta">
+              <div class="form-field">
+                <label for="tipo-cuenta">Tipo de cuenta</label>
+                <select id="tipo-cuenta">
+                  <option value="">Selecciona el tipo de cuenta</option>
+                  <option>Cuenta de ahorros</option>
+                  <option>Cuenta corriente</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="numero-cuenta">Número de cuenta</label>
+                <input id="numero-cuenta" type="text" placeholder="000000000000" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const tipoDesembolso = document.getElementById('tipo-desembolso');
+    const datosCuenta = document.getElementById('datos-cuenta');
+    const tipoCuenta = document.getElementById('tipo-cuenta');
+    const numeroCuenta = document.getElementById('numero-cuenta');
+    const logoInput = document.getElementById('logo-convenio');
+    const logoFilename = document.getElementById('logo-convenio-filename');
+
+    const toggleCuentaFields = (valor) => {
+      const mostrar = valor === 'convenio';
+      datosCuenta.classList.toggle('hidden', !mostrar);
+      if (!mostrar) {
+        tipoCuenta.value = '';
+        numeroCuenta.value = '';
+      }
+    };
+
+    tipoDesembolso.addEventListener('change', (event) => {
+      toggleCuentaFields(event.target.value);
+    });
+
+    logoInput.addEventListener('change', () => {
+      const archivos = logoInput.files;
+      logoFilename.textContent = archivos && archivos.length > 0 ? archivos[0].name : 'Ningún archivo seleccionado';
+    });
+
+    const fileUploadLabel = document.querySelector('.file-upload');
+    if (fileUploadLabel) {
+      fileUploadLabel.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          logoInput.click();
+        }
+      });
+    }
+
+    toggleCuentaFields(tipoDesembolso.value);
+  </script>
+</body>
+</html>
